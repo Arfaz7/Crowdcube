@@ -5,16 +5,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import java.util.Date;
+
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentMethod {
-    private PaymentType type;
-
     public enum PaymentType {
         STRIPE,
         SAGEPAY,
         BRAINTREE
     }
+
+    private PaymentType type;
+    private String cardNumber;
+    private String expiryDate;
+    private String ccv;
 }
