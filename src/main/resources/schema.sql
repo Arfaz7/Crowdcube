@@ -1,1 +1,11 @@
-;
+DROP TABLE IF EXISTS PAYMENT_METHOD;
+
+
+CREATE TABLE PAYMENT_METHOD (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
+  card_number VARCHAR(250) NOT NULL,
+  expiryDate VARCHAR(250) NOT NULL,
+  ccv TEXT DEFAULT NULL,
+  foreign key (deal_id) references DEAL(id)
+);

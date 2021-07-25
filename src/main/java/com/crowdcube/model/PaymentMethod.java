@@ -5,18 +5,24 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import javax.persistence.*;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name="payment_method")
 public class PaymentMethod {
     public enum PaymentType {
         STRIPE,
         SAGEPAY,
         BRAINTREE
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private PaymentType type;
     private String cardNumber;

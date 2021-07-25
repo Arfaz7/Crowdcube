@@ -1,1 +1,1 @@
-;
+Insert into PAYMENT_METHOD(id, type, cardNumber, expiryDate, ccv) values(1. "STRIPE", "1234567812345678", "04/2021", "012")
