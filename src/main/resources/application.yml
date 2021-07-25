@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: crowdcube-payment
+  profiles:
+    include:
+      - run
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+  datasource:
+    url: jdbc:h2:file:~/h2/test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    schema:
+      - "classpath:/schema.sql"
+    data:
+      - "classpath:/data.sql"
+
+  jpa:
+    hibernate.ddl-auto: none
+    show-sql: false
+    repositories:
+      bootstrap-mode: default
+
+logging:
+  level:
+    io:
+      swagger:
+        models:
+          parameters:
+            AbstractSerializableParameter: error
+
+  file: log/${spring.application.name}.log
