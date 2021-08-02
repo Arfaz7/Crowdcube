@@ -121,7 +121,7 @@ public class PaymentMethodServiceTest {
         List<PaymentMethod> pmList = new ArrayList<>();
         pmList.add(pm1);
         pmList.add(pm2);
-        when(paymentMethodRepository.findAllByUserId(anyLong())).thenReturn(pmList);
+        when(paymentMethodRepository.findAllByCustomerId(anyLong())).thenReturn(pmList);
 
         List<PaymentMethod> result = paymentMethodService.getAll(Long.valueOf(1));
         assertEquals(2, result.size());

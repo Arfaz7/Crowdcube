@@ -35,7 +35,7 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
     }
 
     @Override
-    public List<PaymentMethod> getAll(Long userId) {
-        return paymentMethodRepository.findAllByUserId(userId);
+    public List<PaymentMethod> getAll(Long customerId) {
+        return paymentMethodRepository.findAllByCustomerId(customerId);
     }
 }

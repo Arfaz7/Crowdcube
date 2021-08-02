@@ -30,6 +30,6 @@ public class PaymentMethod {
     private String ccv;
 
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private User user;
+    @JoinColumn(name = "CUSTOMER_ID")
+    private Customer customer;
 }
