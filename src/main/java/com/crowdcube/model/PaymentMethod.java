@@ -28,4 +28,8 @@ public class PaymentMethod {
     private String cardNumber;
     private String expiryDate;
     private String ccv;
+
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private User user;
 }

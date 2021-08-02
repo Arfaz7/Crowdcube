@@ -3,6 +3,7 @@ package com.crowdcube.services;
 import com.crowdcube.model.PaymentMethod;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,4 +13,6 @@ public interface PaymentMethodService {
     PaymentMethod update(PaymentMethod pm);
 
     boolean delete(Long paymentMethodId);
+
+    List<PaymentMethod> getAll(Long userId);
 }
